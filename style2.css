@@ -1,0 +1,473 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1e824c, #2980b9);
+  color: white;
+  background-image: url('cricket-silhouette.png'); /* Use cricket-themed silhouette image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+/* Navigation Bar Animation */
+nav {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Hover effect for navigation links */
+nav ul li a {
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ff5733; /* Change color on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+/* Slide-in animation for header text */
+.home-background h1 {
+  animation: slideInLeft 1.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+.home-background p {
+  animation: slideInRight 1.5s ease-in-out 0.5s forwards;
+  opacity: 0;
+}
+
+@keyframes slideInLeft {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Background animation for a subtle parallax effect */
+.home-background::before {
+  animation: backgroundMove 20s infinite linear;
+}
+
+@keyframes backgroundMove {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: 100% 100%;
+  }
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  color: #f1c40f;
+}
+.home-background {
+  background-image: url('https://wallpaperaccess.com/full/2604895.jpg'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  height: 100vh; /* Full viewport height */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a pseudo-element for the blur effect */
+.home-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px); /* Adjust the blur intensity as needed */
+  z-index: 1;
+}
+
+/* Styling for text content */
+.home-background h1,
+.home-background p {
+  margin: 0;
+  position: relative;
+  z-index: 2; /* Ensures text is above the blurred background */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+}
+
+
+header {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid #fff;
+}
+
+h1 {
+  margin: 0;
+}
+
+section {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  color: #f1c40f;
+}
+
+/* Player Cards */
+#featured-players, #top-matches, #fan-zone {
+  padding: 20px;
+}
+
+.player-card {
+  display: inline-block;
+  width: 30%;
+  margin: 10px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.player-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+#featured-players {
+  text-align: center;
+}
+
+.player-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.player-card {
+  min-width: 300px;
+  margin: 0 10px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.player-card img {
+  width: 100%;
+  border-radius: 8px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+/* Animation for player profiles section */
+.player-profile {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.3s;
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #32393a;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Keyframes for fade-in and slide-up effect */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Staggered animation delay for each player profile */
+.player-profile:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.player-profile:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.player-profile:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.player-profile:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.player-profile:nth-child(5) {
+  animation-delay: 1s;
+}
+
+/* Hover effect for player profiles */
+.player-profile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for profile text */
+.player-profile h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.player-profile p, .player-profile ul {
+  margin: 5px 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .player-card {
+      width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .player-card {
+      width: 90%;
+  }
+}
+
+.match, .fan-story-form {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px;
+}
+
+/* Form Styling */
+#fan-story-form input, #fan-story-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#fan-story-form button {
+  background-color: #27ae60;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#fan-story-form button:hover {
+  background-color: #2ecc71;
+}
+
+#fan-stories {
+  margin-top: 20px;
+}
+
+#fan-stories ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#fan-stories li {
+  background-color: #e8f5e9;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  color: #333;
+}
+
+#map-container {
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+header h1{
+  color: #f1c40f;
+}
+
+.player-profile h3{
+  color:#f1c40f
+
+}
+.player-profile strong{
+  color:tan;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+}
+/* Container styles for the map section */
+#map .container {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInScale 1s forwards;
+  animation-delay: 0.2s;
+  margin: 20px 0;
+  transition: transform 0.3s;
+}
+
+/* Keyframes for fade-in and scale animation */
+@keyframes fadeInScale {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Staggered animation delay for each map container */
+#map .container:nth-child(1) {
+  animation-delay: 0.2s;
+}
+#map .container:nth-child(2) {
+  animation-delay: 0.4s;
+}
+#map .container:nth-child(3) {
+  animation-delay: 0.6s;
+}
+#map .container:nth-child(4) {
+  animation-delay: 0.8s;
+}
+#map .container:nth-child(5) {
+  animation-delay: 1s;
+}
+
+/* Hover effect for map containers */
+#map .container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(34, 33, 33, 0.2);
+}
+
+/* Style for map section headings */
+#map h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.container{
+  display: inline-block;
+  margin-right:50px;
+}
+.container p{
+  color:aquamarine;
+}
+/* Animation for fade-in effect */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Animation for slide-in effect */
+@keyframes slideIn {
+  from {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Add a bounce effect when a new story is added */
+@keyframes bounceIn {
+  0% {
+      transform: scale(0);
+      opacity: 0;
+  }
+  60% {
+      transform: scale(1.1);
+      opacity: 1;
+  }
+  80% {
+      transform: scale(0.9);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* Style for the newly added fan stories */
+ul#fan-stories-list li {
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #e2e2e2;
+  border-radius: 5px;
+  animation: bounceIn 0.5s ease forwards; /* Add bounce effect */
+}
